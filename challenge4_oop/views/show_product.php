@@ -17,16 +17,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Main menu</title>
+  <title>Prodcut menu</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 </head>
 <body>
+<?php include 'partials/header.php';?>
 
 <div class="card text-center" style="padding:15px;">
-  <h4>home</h4>
+  <h4>Products</h4>
 </div><br><br> 
 
 <div class="container">
@@ -60,6 +61,8 @@
         <th>Name</th>
         <th>Price</th>
         <th>Details</th>
+        <th>Category</th>
+
         <th>Action</th>
       </tr>
     </thead>
@@ -73,10 +76,12 @@
           <td><?php echo $product['name'] ?></td>
           <td><?php echo $product['price'] ?></td>
           <td><?php echo $product['details'] ?></td>
+          <td><?php echo $product['category_id'] ?></td>
+
           <td>
             <a href="edit.php?editId=<?php echo $product['id'] ?>" style="color:green">
               <i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp
-            <a href="index.php?deleteId=<?php echo $product['id'] ?>" style="color:red" onclick="confirm('Are you sure want to delete this record')">
+            <a href="show_product.php?deleteId=<?php echo $product['id'] ?>" style="color:red" onclick="confirm('Are you sure want to delete this record')">
               <i class="fa fa-trash" aria-hidden="true"></i>
             </a>
           </td>
@@ -87,6 +92,7 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../public/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

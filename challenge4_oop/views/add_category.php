@@ -3,20 +3,20 @@
 <?php
 
 // Include database file
-include 'Product.php';
+include 'Category.php';
 
-$productObj = new product();
+$categoryObj = new category();
 
-// Insert Record in product table
+// Insert Record in category table
 if(isset($_POST['submit'])) {
-  $productObj->insertData($_POST);
+  $categoryObj->insertData($_POST);
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Add product</title>
+<title>Add category</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -25,18 +25,14 @@ if(isset($_POST['submit'])) {
 <body>
 
 <div class="card text-center" style="padding:15px;">
-<h4>Adding a new prodcut</h4>
+<h4>Adding a new category</h4>
 </div><br> 
 
 <div class="container">
-<form action="add_product.php" method="POST">
+<form action="add_category.php" method="POST">
   <div class="form-group">
     <label for="name">Name:</label>
     <input type="text" class="form-control" name="name" placeholder="Enter name" required="">
-  </div>
-  <div class="form-group">
-    <label for="price">Price:</label>
-    <input type="price" class="form-control" name="price" placeholder="Enter price" required="">
   </div>
   <div class="form-group">
     <label for="detials">detials:</label>

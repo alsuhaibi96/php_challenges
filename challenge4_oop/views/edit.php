@@ -48,6 +48,17 @@
       <label for="details">details:</label>
       <input type="text" class="form-control" name="udetails" value="<?php echo $product['details']; ?>" required="">
     </div>
+
+    <div class="form-group">
+     <select name="ucategory_id">
+       <?php
+       $categories=$productObj->displayCatData();
+foreach($categories as $category){
+    echo   "<option value='".$category['id']."'>".$category['name'] ."</option>";
+}
+?>
+       </select>
+    </div>
     <div class="form-group">
       <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
       <input type="submit" name="update" class="btn btn-primary" style="float:right;" value="Update">
