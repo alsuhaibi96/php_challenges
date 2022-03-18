@@ -50,7 +50,7 @@ class Database {
         $table_columns = implode(',', array_keys($data));
         $table_values  = implode("','", $data);
 
-        $this->sql    = "INSERT INTO $table ($table_columns) VALUES ('$table_values')";
+        $this->sql    =     "INSERT INTO $table ($table_columns) VALUES ('$table_values')";
         $this->result = $this->pdo->query($this->sql);
     }
 
